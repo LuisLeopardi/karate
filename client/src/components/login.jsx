@@ -47,7 +47,7 @@ class Login extends Component {
             function:'login'
         }
 
-        axios.post('http://localhost:5000/ingreso', payload)
+        axios.post('https://glacial-refuge-74459.herokuapp.com/ingreso', payload)
         .then(res=>{
             if (res) {
                 this.setState({ data: res.data });
