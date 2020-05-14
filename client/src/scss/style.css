@@ -1,0 +1,122 @@
+nav, .button-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.desktop-nav, .button-wrap a, .container figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.button-wrap a {
+  width: 100px;
+  height: 25px;
+}
+
+* {
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  z-index: 1000;
+}
+
+nav img {
+  height: 100%;
+}
+
+.desktop-nav {
+  width: 100%;
+  height: 100%;
+}
+
+.desktop-nav a {
+  color: #000;
+  margin: 0 10px 0 20px;
+  letter-spacing: 3px;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.button-wrap {
+  background-color: #1c1c1c;
+  width: 100%;
+  height: 50px;
+}
+
+.button-wrap .gray {
+  background-color: #525252;
+}
+
+.button-wrap .green {
+  background-color: #07c900;
+}
+
+.button-wrap .orange {
+  background-color: #d96c0d;
+}
+
+.button-wrap a {
+  font-size: 80%;
+  color: #fff;
+  margin: 0 30px 0 30px;
+}
+
+.container {
+  height: 500px;
+}
+
+.container div {
+  width: 50%;
+}
+
+.container img {
+  margin: 0 10px 0 10px;
+  -webkit-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.75);
+}
+/*# sourceMappingURL=style.css.map */

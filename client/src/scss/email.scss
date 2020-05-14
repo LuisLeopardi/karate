@@ -1,0 +1,26 @@
+@import 'config';
+
+.emailForm {
+    @extend %align-vertical-center;
+    width: 100%;
+    padding: 10px;
+}
+
+input, textarea {
+    width: 50%;
+    height: 30px;
+    margin: 5px 0 5px 0;
+    border: 1px solid rgb(88, 160, 255);
+    outline-color: rgb(255, 115, 0);
+    padding: 2px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+textarea {
+    height: 80px;
+}
