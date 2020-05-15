@@ -10,7 +10,7 @@ let deletePayload = {
     function: 'deleteNews'
 }
 
-axios.post('http://localhost:5000/ingreso', deletePayload)
+axios.post('https://glacial-refuge-74459.herokuapp.com/ingreso', deletePayload)
 .then(res=>{
     setNews(res.data)
 }, enableDelete(false))

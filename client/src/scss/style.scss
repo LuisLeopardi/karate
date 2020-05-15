@@ -1,41 +1,5 @@
 @import '_config.scss';
 
-.admin-user-listItem, .button-wrap, nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.userPanel .data .month, .userPanel .data .monthlyHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.container .word-container p {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.userPanel .data .monthlyPanel li, .container figure, .button-wrap a, .desktop-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.adminForm, .userPanel .data .slider-wrap, .userPanel .data .monthlyPanel, .container .word-container, .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.userPanel .header span {
-  content: "";
-  position: absolute;
-}
-
 * {
   position: relative;
   text-decoration: none;
@@ -49,6 +13,7 @@ html, body {
   padding: 0;
   margin: 0;
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 .gray {
@@ -91,7 +56,7 @@ html, body {
   width: 100px;
   height: 80%;
   right: 5px;
-  top: 13%;
+  top: 10%;
   &:hover {
     border: 1px solid rgb(255, 0, 0);
     color: rgb(255, 0, 0);
@@ -266,13 +231,13 @@ header {
 .frontPage-section {
   display: flex;
   width: 100%;
-  margin: 50px 0 50px 0;
+  padding: 50px 0 50px 0;
   max-width: 1300px;
-  height: 350px;
+  height: auto;
   span {
     position: absolute;
     content: '';
-    bottom: 35px;
+    bottom: 0;
     height: 8px;
     border-radius: 10px;
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
@@ -298,15 +263,14 @@ header {
   border-radius: 50%;
   top: -18px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  background-color: gray;
   z-index: 10000;
 }
 
 .absoluteRight {
   text-align: right;
-  position: absolute;
-  right: 55px;
+  
   padding: 0;
-  top: 0;
 }
 
 .moreRight {
@@ -1232,8 +1196,13 @@ footer {
   }
   
   .sectionFrontImage {
-    width: 250px;
-    height: 250px;
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    top: -18px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.75);
+    z-index: 10000;
   }
   
   .moreRight {
@@ -1740,14 +1709,17 @@ margin: 3px;
   }
   .blueBorder {
     right: 5px;
+    border: 3px solid #006eff;
  }
  
  .greenBorder {
    left: 5px;
+   border: 3px solid #13a000;
  }
  
  .redBorder {
    right: 5px;
+   border: 3px solid #ff0022;
  }
 
  .absoluteRight {

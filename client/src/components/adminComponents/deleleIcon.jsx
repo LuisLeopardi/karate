@@ -10,7 +10,7 @@ const DeleteIcon = ({nombre, setUsers,setUserForDelete, userForDelete, value}) =
             function:'deleteUser'
         };
 
-       axios.post('http://localhost:5000/ingreso', userName)
+       axios.post('https://glacial-refuge-74459.herokuapp.com/ingreso', userName)
        .then(res=>{
         setUsers(res.data)
        }, setUserForDelete(false))

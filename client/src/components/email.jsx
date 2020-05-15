@@ -34,7 +34,7 @@ class Email extends Component {
             message: this.state.message
         }
 
-        axios.post('http://localhost:5000/contacto', msg)
+        axios.post('https://glacial-refuge-74459.herokuapp.com/contacto', msg)
         .then(res=>{
             if (res) {
                 this.setState({ submitText: 'mensaje enviado exitosamente', spanClass:'message' })
