@@ -34,7 +34,7 @@ const AdminPanel = ({changePosition}) => {
                 function:'getAllData'
             }
             
-            axios.post('http://localhost:5000/ingreso',payload)
+            axios.post('https://glacial-refuge-74459.herokuapp.com/ingreso',payload)
             .then(res=>{
                 setNews(res.data[1])
                 setUsers(res.data[0])         
