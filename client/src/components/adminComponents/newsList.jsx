@@ -33,7 +33,6 @@ return (
 
     {   news?
 
-
         news[0].paraAlumnos.map((news,i)=>
             <li key={news} 
             className={

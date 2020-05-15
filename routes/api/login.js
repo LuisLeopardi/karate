@@ -146,6 +146,24 @@ router.post('/',(req,res)=>{
   })
   .catch(err=>console.log(err))
 
+} else if (req.body.function === 'getAllData') {
+
+  const getData = async () => {
+
+    const users =  User.find({}).then(users=>{return users})
+ 
+    const news = News.find({}).then(news=>{return news})
+ 
+    let awaitPromises = Promise.all([users,news])
+ 
+    let allData = await awaitPromises
+    
+    res.json(allData)
+    
+   }
+     
+   getData()
+   
 }
 
 });
