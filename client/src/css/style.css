@@ -10,7 +10,7 @@ footer figure, .panel-btn-wrap, .donate .donate-option, .history-box, .word-list
   justify-content: space-around;
 }
 
-footer p, .check-audience, .formToMod, .userName, .phone i, .word-list, .frontPage-infoSection div, .redBTN {
+footer p, .check-audience, .formToMod, .userName, .phone i, .word-list, .frontPage-infoSection div, .mobile-nav div a, .redBTN {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +27,42 @@ footer p, .check-audience, .formToMod, .userName, .phone i, .word-list, .frontPa
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.admin-user-listItem, .button-wrap, nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.userPanel .data .month, .userPanel .data .monthlyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container .word-container p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userPanel .data .monthlyPanel li, .container figure, .button-wrap a, .desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminForm, .userPanel .data .slider-wrap, .userPanel .data .monthlyPanel, .container .word-container, .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.userPanel .header span {
+  content: "";
+  position: absolute;
 }
 
 * {
@@ -84,7 +120,7 @@ html, body {
   width: 100px;
   height: 80%;
   right: 5px;
-  top: 10%;
+  top: 13%;
 }
 .redBTN:hover {
   border: 1px solid red;
@@ -127,6 +163,9 @@ nav {
   z-index: 1000;
   background-color: #fff;
 }
+nav a {
+  height: 100%;
+}
 
 nav img {
   height: 100%;
@@ -148,7 +187,6 @@ nav img {
   display: none;
   position: absolute;
   right: 15px;
-  top: 5px;
   border: 2px solid #008cff;
   border-radius: 10px;
   justify-content: space-around;
@@ -259,14 +297,14 @@ header div p {
 .frontPage-section {
   display: flex;
   width: 100%;
-  padding: 50px 0 50px 0;
+  margin: 50px 0 50px 0;
   max-width: 1300px;
-  height: auto;
+  height: 350px;
 }
 .frontPage-section span {
   position: absolute;
   content: "";
-  bottom: 0;
+  bottom: 35px;
   height: 8px;
   border-radius: 10px;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
@@ -291,13 +329,15 @@ header div p {
   border-radius: 50%;
   top: -18px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  background-color: gray;
   z-index: 10000;
 }
 
 .absoluteRight {
   text-align: right;
+  position: absolute;
+  right: 55px;
   padding: 0;
+  top: 0;
 }
 
 .moreRight {
@@ -1108,8 +1148,10 @@ footer figure img {
   width: 100%;
 }
 footer figure a {
+  padding: 0;
   margin: 0;
   width: 15px;
+  height: 15px;
 }
 
 #exit-btn {
@@ -1190,13 +1232,8 @@ footer figure a {
   }
 
   .sectionFrontImage {
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    top: -18px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
-    z-index: 10000;
+    width: 250px;
+    height: 250px;
   }
 
   .moreRight {
@@ -1594,16 +1631,16 @@ footer figure a {
 @media (max-width: 540px) {
   .mobile-nav {
     height: 80%;
-    right: 15px;
-    top: 5px;
-    width: 50px;
+    right: 7px;
+    width: 30%;
+    border: 1px solid #008cff;
   }
   .mobile-nav p {
-    display: none;
+    width: 60%;
+    font-size: 70%;
   }
   .mobile-nav img {
-    height: 90%;
-    width: 90%;
+    width: 40%;
   }
   .mobile-nav div {
     top: -6px;
@@ -1612,7 +1649,6 @@ footer figure a {
   }
   .mobile-nav div img {
     width: 20px;
-    transform: translateX(8px);
   }
   .mobile-nav div a {
     font-size: 80%;
@@ -1662,17 +1698,14 @@ footer figure a {
 
   .blueBorder {
     right: 5px;
-    border: 3px solid #006eff;
   }
 
   .greenBorder {
     left: 5px;
-    border: 3px solid #13a000;
   }
 
   .redBorder {
     right: 5px;
-    border: 3px solid #ff0022;
   }
 
   .absoluteRight {
@@ -1784,7 +1817,19 @@ footer figure a {
     font-size: 110%;
   }
   .donate .donate-option span {
-    width: 5px;
+    width: 2px;
+  }
+  .donate .donate-option .blue-line {
+    left: 2px;
+  }
+  .donate .donate-option .yellow-line {
+    left: 4px;
+  }
+  .donate .donate-option .darktBlue-line {
+    left: 2px;
+  }
+  .donate .donate-option .lightBlue-line {
+    left: 4px;
   }
 
   .panel-btn, .lightGreenBtn {
@@ -1837,11 +1882,15 @@ footer figure a {
     padding: 2px;
   }
 
+  .mobile-nav {
+    width: 20%;
+  }
+  .mobile-nav p {
+    font-size: 60%;
+    width: 60%;
+  }
   .mobile-nav div {
     height: 40px;
-  }
-  .mobile-nav div img {
-    width: 15px;
   }
   .mobile-nav div a {
     font-size: 70%;
@@ -1959,9 +2008,6 @@ footer figure a {
   .donate .donate-option h1 {
     font-size: 90%;
   }
-  .donate .donate-option span {
-    width: 5px;
-  }
 
   .userPanel .header p {
     font-size: 75%;
@@ -2001,11 +2047,29 @@ footer figure a {
     letter-spacing: 1px;
     font-size: 60%;
   }
+
+  .blueBorder {
+    border: 3px solid #006eff;
+  }
+
+  .greenBorder {
+    left: 5px;
+    border: 3px solid #13a000;
+  }
+
+  .redBorder {
+    right: 5px;
+    border: 3px solid #ff0022;
+  }
 }
 @media (max-width: 380px) {
   nav {
     height: 30px;
     padding: 2px;
+  }
+
+  nav img {
+    width: 190px;
   }
 
   .button-wrap a {
@@ -2021,7 +2085,6 @@ footer figure a {
   }
   .mobile-nav div img {
     width: 13px;
-    transform: translateX(10px);
   }
   .mobile-nav div a {
     font-size: 60%;

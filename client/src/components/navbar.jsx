@@ -8,7 +8,9 @@ const Navbar = () => {
 
     return (
         <nav id ='nav'>
-            <img src={icon} alt='kanku'/> 
+            <a href="/">
+                <img src={icon} alt='kanku'/>
+            </a>   
             <div className='desktop-nav'>
                 {
                 navItem.map((item,i)=>
