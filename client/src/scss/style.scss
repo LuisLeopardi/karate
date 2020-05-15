@@ -149,6 +149,7 @@ nav img {
 }
 
 .desktop-nav a {
+  @extend %align-center-center;
   color: #000;
   margin: 0 15px 0 15px;
   letter-spacing: 3px;

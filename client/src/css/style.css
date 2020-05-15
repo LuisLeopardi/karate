@@ -10,7 +10,7 @@ footer figure, .panel-btn-wrap, .donate .donate-option, .history-box, .word-list
   justify-content: space-around;
 }
 
-footer p, .check-audience, .formToMod, .userName, .phone i, .word-list, .frontPage-infoSection div, .mobile-nav div a, .redBTN {
+footer p, .check-audience, .formToMod, .userName, .phone i, .word-list, .frontPage-infoSection div, .mobile-nav div a, .desktop-nav a, .redBTN {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1888,6 +1888,7 @@ footer figure a {
   .mobile-nav p {
     font-size: 60%;
     width: 60%;
+    letter-spacing: 0px;
   }
   .mobile-nav div {
     height: 40px;
