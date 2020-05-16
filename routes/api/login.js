@@ -102,15 +102,20 @@ router.post('/',(req,res)=>{
     const cantidad_pagada = `${year}.$.cantidad_pagada`
     const número_de_transferencia = `${year}.$.número_de_transferencia`
 
-    User.updateOne({ _id: req.body.id, 'año_2020.mes':req.body.month }, { $set: 
+    User.updateOne({ _id: req.body.id, 'año_2020.mes':req.body.month }, { 
+      $set: 
       {
         [pagado]:true,
         [método_de_pago]:req.body.metodo,
         [fecha_de_pago]:req.body.fecha,
         [cantidad_pagada]:req.body.cantidad,
         [número_de_transferencia]:req.body.numero
+      },
+      $push: {
+        transferencias: req.body.metodo==='transferencia'? `transferencia n° ${req.body.numero} el día ${req.body.fecha} por el mes de ${req.body.month}`: false
       }
-    }).then(()=>{
+    })
+    .then(()=>{
       User.find({})
       .then(users=>{
         res.send(users)

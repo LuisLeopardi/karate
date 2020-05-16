@@ -3,11 +3,9 @@ import React, {useEffect, useState} from 'react';
 const UserFields = ({setView ,alumnos, addAlumnos}) => {
 
     useEffect(()=>{
-        if(!alumnos && !addAlumnos)
-            setValue('Alumnos') 
-        else {
-            console.log(value)
-        }
+        
+        if(!alumnos && !addAlumnos) setValue('Alumnos') 
+
     },[alumnos, addAlumnos])
 
     const options = ['ver','agregar','Alumnos'];

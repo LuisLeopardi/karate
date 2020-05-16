@@ -3,11 +3,9 @@ import React, {useState, useEffect} from 'react';
 const NewsFields = ({setView, noticias, addNoticias}) => {
 
     useEffect(()=>{
-        if(!noticias && !addNoticias)
-            setValue('Noticias') 
-        else {
-            console.log(value)
-        }
+        
+        if(!noticias && !addNoticias) setValue('Noticias') 
+
     },[noticias, addNoticias])
 
     const options = ['ver','agregar','Noticias'];

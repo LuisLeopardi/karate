@@ -48,7 +48,10 @@ const DefaultPanel = ({data,position}) => {
             </ul>
 
             <ul style={{ display:  open3 ? 'block' : 'none' }}>
-                <li className='default-listItem'>{data[0].transferencias[0]} </li>
+                {data[0].transferencias.map(e=>
+                    <li className='default-listItem' key={e}> {e} </li>  
+                ) 
+                }
             </ul>
 
             <MonthlyPanel open={open4} data={data[0]} />

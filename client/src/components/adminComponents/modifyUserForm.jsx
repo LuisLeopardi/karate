@@ -57,7 +57,6 @@ let monthPayload = {
 
 axios.post('https://glacial-refuge-74459.herokuapp.com/ingreso', monthPayload)
 .then(res=>{
-console.log(res)
 setUsers(res.data)
 }, setValues({cantidad:'', fecha:'', metodo:'', numero:''})) 
 
