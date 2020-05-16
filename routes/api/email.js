@@ -19,14 +19,14 @@ router.post('/', (req,res) => {
       port: 465,
       secure: true, 
       auth: {
-        user: 'supernano1998@gmail.com',
+        user: 'dojosenseicarlosazocar1@gmail.com',
         pass: pass
       }
     });
   
     let options = {
       from: req.body.email, // sender address
-      to: "supernano1998@gmail.com", // list of receivers
+      to: "dojosenseicarlosazocar1@gmail.com", // list of receivers
       subject: "contacto karate", // Subject line
       html: output // html body
     };

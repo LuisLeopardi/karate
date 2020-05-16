@@ -46,7 +46,7 @@ const UserDataPanel = ({data, setView}) => {
 
             <ul style={{ display:  open ? 'block' : 'none' }}>
                 <li className='default-listItem'> Correo: {data.correo} </li>
-                <li className='default-listItem'> Numero: {data.pre_examenes} </li>
+                <li className='default-listItem'> Numero: {data.número} </li>
                 <li className='default-listItem'> Grado: Cinta {data.cinta} </li>
                 <li className='default-listItem'> Asistente: {data.asistente? 'si' : 'no'} </li>
                 <li className='default-listItem'> Dirección: {data.dirección} </li>
