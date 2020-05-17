@@ -6,7 +6,7 @@ state = {
     data: false
 }
 componentDidMount(){
-axios.get('https://glacial-refuge-74459.herokuapp.com/noticias')
+axios.post('https://glacial-refuge-74459.herokuapp.com/noticias')
 .then(res=>this.setState({ data:res.data[0].paraTodos }))
 }
 render() {

@@ -5,7 +5,7 @@ const router = express.Router();
 
 const News = require('../../models/News')
 
-router.get('/',(req,res)=>{
+router.post('/',(req,res)=>{
     News.find({})
     .then(data=>res.json(data))
     .catch(err=>console.log())
