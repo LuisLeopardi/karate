@@ -110,10 +110,13 @@ router.post('/',(req,res)=>{
         [fecha_de_pago]:req.body.fecha,
         [cantidad_pagada]:req.body.cantidad,
         [número_de_transferencia]:req.body.numero
-      },
-      $push: {
-        transferencias: req.body.metodo==='transferencia'? `transferencia n° ${req.body.numero} el día ${req.body.fecha} por el mes de ${req.body.month}`: false
+      }, 
+      $push: 
+      req.body.metodo==='transferencia'?
+      {
+        transferencias:  `transferencia n° ${req.body.numero} el día ${req.body.fecha} por el mes de ${req.body.month}`
       }
+      : false
     })
     .then(()=>{
       User.find({})
