@@ -52,12 +52,16 @@ const UserDataPanel = ({data, setView}) => {
                 <li className='default-listItem'> Dirección: {data.dirección} </li>
                 <li className='default-listItem'> Fecha de nacimiento: {data.fecha_NC} </li>
                 <li className='default-listItem'> Fecha de inscripción: {data.fecha_INS} </li>
-                <li className='default-listItem'> Preexamenes: {data.pre_examenes} </li>
+                <li className='default-listItem'> Preexamenes: {data.preexamenes} </li>
                 <li className='default-listItem'> Contraseña: {data.contraseña} </li>
             </ul>
 
             <ul style={{ display: open3 ? 'block' : 'none' }}>
-                <li className='default-listItem'>{data.transferencias} </li>
+                {
+                    data.transferencias.map((e,i)=>
+                        <li className='default-listItem' key={e + i}> {e} </li>  
+                    )
+                }
             </ul>
 
             <MonthlyPanel open={open4} data={data} />
