@@ -20,20 +20,21 @@ const Navbar = () => {
                 )
                 }
             </div>
-            <div className='mobile-nav' > 
-                    <p onClick={()=>{ setPosition('0vw') }}> MENU </p>
-                    <img onClick={()=>{ setPosition('0vw') }} src={menu} alt="menu"/>
-               
-                <div style={{ right: position }} >
-                    <img src={x} onClick={()=>{ setPosition('-100vw') }} alt="close"/>
-                    {
-                    navItem.map((item, i)=>
-                        <a key={item + i} href={ i===0 ? '/' : item}> 
-                            {item.toUpperCase()} 
-                        </a>      
-                    )}
-                </div>     
-            </div>   
+
+            <div className='mobile-nav'> 
+                <p onClick={()=>{ setPosition('0vw') }}> MENU </p>
+                <img onClick={()=>{ setPosition('0vw') }} src={menu} alt="menu"/>
+            </div>  
+
+            <div className='mobile-nav-div' style={{ right: position }} >
+                <img src={x} onClick={()=>{ setPosition('-100vw') }} alt="close"/>
+                {
+                navItem.map((item, i)=>
+                    <a key={item + i} href={ i===0 ? '/' : item}> 
+                        {item.toUpperCase()} 
+                    </a>      
+                )}
+            </div> 
         </nav>
     )
 }

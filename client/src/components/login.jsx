@@ -58,7 +58,10 @@ class Login extends Component {
             }
 
         })
-        .catch(err => console.log(err))
+        .catch(()=>{
+            this.setState({ data:false });
+            this.resetForm();
+        })
     }
 
     changeUser = (user) => {

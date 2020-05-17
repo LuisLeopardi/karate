@@ -175,13 +175,13 @@ nav img {
     height: 50%;
     width: 50%;
   }
-  div {
+}
+
+.mobile-nav-div {
     @extend %align-center-around;      
     position: absolute;
     height: 50px;
-    top: -6px;
     width: 100vw;
-    transform: translateX(15px);
     background-color: #fff;
     transition: 0.5s ease-in-out all;
     img {
@@ -192,7 +192,6 @@ nav img {
       color: rgb(0, 0, 0);
       letter-spacing: 1px;
     }
-  }
 }
 
 .button-wrap {
@@ -1684,17 +1683,15 @@ margin: 3px;
     img {
       width: 40%;
     }
-    div {
-      top: -6px;
-      width: 100vw;
-      transform: translateX(15px);
-      img {
+  }
+
+  .mobile-nav-div {
+    img {
         width: 20px;
       }
       a {
         font-size: 80%;
       }
-    }
   }
 
   .button-wrap a {
@@ -1952,14 +1949,18 @@ margin: 2px;
       width: 60%;
       letter-spacing: 0px;
     }
-    div {
-      height: 40px;
-      a{
-        font-size: 70%;
-      }
-    }  
   }
 
+  .mobile-nav-div {
+    height: 40px;
+    a{
+      font-size: 70%;
+    }
+    img {
+      width: 13px;
+      margin: 0 0 0 10px;
+    }
+  }
   .button-wrap {
     height: 30px;
   }
@@ -2152,16 +2153,14 @@ margin: 2px;
     letter-spacing: 1px;
   }
 
-  .mobile-nav {
-    div {
-      height: 30px;
-      img {
+  .mobile-nav-div {
+    height: 30px;
+    img {
       width: 13px;
-      }
-      a{
-        font-size: 60%;
-      }
-    }  
+    }
+    a{
+      font-size: 60%;
+    }
   }
 
   header {

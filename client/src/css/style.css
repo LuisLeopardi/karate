@@ -4,13 +4,13 @@
   justify-content: flex-start;
 }
 
-footer figure, .panel-btn-wrap, .donate .donate-option, .history-box, .word-list li, .frontPage-infoSection .frontPage-buttonWrap, .mobile-nav div {
+footer figure, .panel-btn-wrap, .donate .donate-option, .history-box, .word-list li, .frontPage-infoSection .frontPage-buttonWrap, .mobile-nav-div {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-footer p, .check-audience, .formToMod, .userName, .phone i, .word-list, .frontPage-infoSection div, .mobile-nav div a, .desktop-nav a, .redBTN {
+footer p, .check-audience, .formToMod, .userName, .phone i, .word-list, .frontPage-infoSection div, .mobile-nav-div a, .desktop-nav a, .redBTN {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,19 +203,18 @@ nav img {
   height: 50%;
   width: 50%;
 }
-.mobile-nav div {
+
+.mobile-nav-div {
   position: absolute;
   height: 50px;
-  top: -6px;
   width: 100vw;
-  transform: translateX(15px);
   background-color: #fff;
   transition: 0.5s ease-in-out all;
 }
-.mobile-nav div img {
+.mobile-nav-div img {
   width: 30px;
 }
-.mobile-nav div a {
+.mobile-nav-div a {
   color: black;
   letter-spacing: 1px;
 }
@@ -1641,15 +1640,11 @@ footer figure a {
   .mobile-nav img {
     width: 40%;
   }
-  .mobile-nav div {
-    top: -6px;
-    width: 100vw;
-    transform: translateX(15px);
-  }
-  .mobile-nav div img {
+
+  .mobile-nav-div img {
     width: 20px;
   }
-  .mobile-nav div a {
+  .mobile-nav-div a {
     font-size: 80%;
   }
 
@@ -1889,11 +1884,16 @@ footer figure a {
     width: 60%;
     letter-spacing: 0px;
   }
-  .mobile-nav div {
+
+  .mobile-nav-div {
     height: 40px;
   }
-  .mobile-nav div a {
+  .mobile-nav-div a {
     font-size: 70%;
+  }
+  .mobile-nav-div img {
+    width: 13px;
+    margin: 0 0 0 10px;
   }
 
   .button-wrap {
@@ -2080,13 +2080,13 @@ footer figure a {
     letter-spacing: 1px;
   }
 
-  .mobile-nav div {
+  .mobile-nav-div {
     height: 30px;
   }
-  .mobile-nav div img {
+  .mobile-nav-div img {
     width: 13px;
   }
-  .mobile-nav div a {
+  .mobile-nav-div a {
     font-size: 60%;
   }
 

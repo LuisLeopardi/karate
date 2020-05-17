@@ -44,7 +44,10 @@ class Email extends Component {
                 this.resetForm()
             }
         })
-        .catch(err => console.log(err))
+        .catch(()=>{
+            this.setState({ submitText: 'error, intentalo de nuevo', spanClass:'message' })
+            this.resetForm()
+        })
     }
 
     render(){
