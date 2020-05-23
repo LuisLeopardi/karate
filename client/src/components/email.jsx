@@ -35,14 +35,17 @@ class Email extends Component {
         }
 
         axios.post('https://glacial-refuge-74459.herokuapp.com/contacto', msg)
-        .then(res=>{
-            if (res) {
+        .then((res)=>{
+            if (res.data === 'success') { 
                 this.setState({ submitText: 'mensaje enviado exitosamente', spanClass:'message' })
-                this.resetForm()
-            } else {
-                this.setState({ submitText: 'error, intentalo de nuevo', spanClass:'message' })
-                this.resetForm()
-            }
+                this.resetForm() 
+           } else if (res.data === '"email" must be a valid email') {
+                this.setState({ submitText: 'El correo no existe', spanClass:'message' })
+                this.resetForm() 
+           } else {
+                this.setState({ submitText: 'rellene todos los campos', spanClass:'message' })
+                this.resetForm() 
+           }
         })
         .catch(()=>{
             this.setState({ submitText: 'error, intentalo de nuevo', spanClass:'message' })

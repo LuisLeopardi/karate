@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import UserFields from './adminComponents/userFields.jsx';
 import NewsFields from './adminComponents/newsFields.jsx';
 import AddUser from './adminComponents/addUser.jsx';
@@ -9,7 +9,7 @@ import UserDataPanel from './adminComponents/userDataPanel.jsx';
 import AddNews from './adminComponents/addNews.jsx';
 import NewsList from './adminComponents/newsList.jsx';
 import axios from 'axios';
-
+import {getJwt} from './helpers/jwt.js'
 
 const AdminPanel = ({changePosition}) => {
 
@@ -25,6 +25,11 @@ const AdminPanel = ({changePosition}) => {
         seeAlumnos:false,
         addNoticias:false
     });
+
+    useEffect(()=>{
+        const jwt = getJwt();
+        if(!jwt) window.location.reload();
+     })
 
     const runAdmin = () =>{
 
@@ -104,6 +109,7 @@ const AdminPanel = ({changePosition}) => {
 
                 <AddNews
                 addNoticias={addNoticias}
+                setNews={setNews}
                 />            
 
             </div>

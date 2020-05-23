@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import DefaultPanel from './defaultPanel.jsx';
-import AdminPanel from './adminPanel.jsx'
+import AdminPanel from './adminPanel.jsx';
+import {getJwt} from './helpers/jwt.js'
 const PersonalData = ({data,position,changePosition}) => {
 
     const footer = document.getElementById('footer')
@@ -9,6 +10,11 @@ const PersonalData = ({data,position,changePosition}) => {
     footer.style.display = 'none';
     nav.style.display = 'none'; 
     buttonWrap.style.display = 'none';
+
+    useEffect(()=>{
+       const jwt = getJwt();
+       if(!jwt) window.location.reload();
+    })
 
     return (
         data[0].admin ?

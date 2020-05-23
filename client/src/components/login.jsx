@@ -10,7 +10,8 @@ class Login extends Component {
         data: false,
         position:'relative',
         spanClass: 'noMessage',
-        submitText:'ingresar'
+        submitText:'ingresar',
+        token: false,
     }
 
     changePosition = () => {
@@ -47,20 +48,15 @@ class Login extends Component {
             function:'login'
         }
 
-        axios.post('https://glacial-refuge-74459.herokuapp.com/ingreso', payload)
+        axios.post('https://glacial-refuge-74459.herokuapp.com', payload)
         .then(res=>{
-            if (res) {
-                this.setState({ data: res.data });
-                this.resetForm();
-            } else {
-                this.setState({ data:false });
-                this.resetForm();
-            }
-
+            localStorage.setItem('jwt', res.headers.authtoken)
+            this.setState({ data: res.data});
         })
-        .catch(()=>{
+        .catch(err=>{
             this.setState({ data:false });
             this.resetForm();
+            console.log(err)
         })
     }
 

@@ -4,9 +4,21 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const pass = require('../../config/keys').gmail;
+const joi = require('@hapi/joi')
 app.use(cors());
 
+const schema = joi.object({
+  name:joi.string().required(),
+  phone:joi.number().required(),
+  email:joi.string().required().email(),
+  message:joi.string().required()
+})
+
 router.post('/', (req,res) => {
+
+    const validation = schema.validate(req.body)
+    if(validation.error) return res.send(validation.error.details[0].message)
+
     const output = `
     <p> ${req.body.name} </p>
     <p> ${req.body.phone} </p>
@@ -21,7 +33,7 @@ router.post('/', (req,res) => {
       auth: {
         user: 'dojosenseicarlosazocar1@gmail.com',
         pass: pass
-      }
+      },
     });
   
     let options = {
@@ -35,7 +47,7 @@ router.post('/', (req,res) => {
       if (err) {
         return console.log(err)
       }else{
-        return res.send(true)
+        return res.send('success')
       }
     })
   
