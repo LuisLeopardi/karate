@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const app = express();
 const router = express.Router();
 
+const tokenSecret = require('../../config/keys.js').token;
 const User = require('../../models/User');
 const News = require('../../models/News')
 
@@ -20,7 +21,7 @@ router.post('/',(req,res)=>{
     
     let allData = await awaitPromises
 
-    const token = jwt.sign({_id:user._id}, 'process.env.TOKEN_SECRET')
+    const token = jwt.sign({_id:user._id},tokenSecret)
 
     res
     .header('Access-Control-Expose-Headers', 'authtoken')
