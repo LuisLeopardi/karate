@@ -48,7 +48,7 @@ class Login extends Component {
             function:'login'
         }
 
-        axios.post('https://glacial-refuge-74459.herokuapp.com', payload)
+        axios.post('https://glacial-refuge-74459.herokuapp.com/ingreso', payload)
         .then(res=>{
             localStorage.setItem('jwt', res.headers.authtoken)
             this.setState({ data: res.data});
