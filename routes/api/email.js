@@ -3,7 +3,7 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 const router = express.Router();
-const pass = require('../../config/keys').gmail;
+require('dotenv').config();
 const joi = require('@hapi/joi')
 app.use(cors());
 
@@ -31,8 +31,8 @@ router.post('/', (req,res) => {
       port: 465,
       secure: true, 
       auth: {
-        user: 'dojosenseicarlosazocar1@gmail.com',
-        pass: pass
+        user: process.env.emailUser,
+        pass: process.env.emailPass
       },
     });
   
