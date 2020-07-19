@@ -3,7 +3,7 @@ require('dotenv').config();
 
 module.exports = function verify (req,res,next) {
     console.log(req.header);
-    const token = req.header('auth-token');
+    const token = req.header('jwt');
     console.log(token)
     if(!token) return res.status('401').send('acceso denegado');
     try {
