@@ -31,10 +31,6 @@ router.post('/',(req,res)=>{
 
     login()
 
-})
-
-router.post('/', (req,res)=>{
-
     let year = `año_${new Date().getFullYear()}`
 
     if (req.body.function === 'postUser') {
@@ -176,6 +172,6 @@ router.post('/', (req,res)=>{
        
     }
 
-});
+})
 
 module.exports = router;
