@@ -10,17 +10,13 @@ const News = require('../../models/News');
 
 router.post('/', async (req,res)=>{
 
-  console.log(req.body)
-
-  let user = await User.findOne({correo:req.body.user, contraseña:req.body.password})
-
-  console.log(user)
+  const user = await User.findOne({correo:req.body.user, contraseña:req.body.password})
     
-  let news = await News.findById(process.env.news)
+  const news = await News.findById(process.env.news)
 
-  let awaitPromises = Promise.all([user,news])
+  const awaitPromises = Promise.all([user,news])
     
-  let allData = await awaitPromises
+  const allData = await awaitPromises
 
   const token = jwt.sign({_id:user._id},process.env.token)
 

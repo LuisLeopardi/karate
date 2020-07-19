@@ -44,8 +44,7 @@ class Login extends Component {
 
         let payload = {
             user: this.state.user,
-            password: this.state.password,
-            function:'login'
+            password: this.state.password
         }
 
         axios.post('https://glacial-refuge-74459.herokuapp.com/ingreso', payload)

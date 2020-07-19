@@ -9,6 +9,8 @@ const verify = require('../../verifyToken')
 
 router.post('/', verify, (req,res)=>{
 
+    console.log('trigered in post')
+
     let year = `año_${new Date().getFullYear()}`
 
     if (req.body.function === 'postUser') {
