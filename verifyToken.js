@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 module.exports = function verify (req,res,next) {
-    const token = req.header('authtoken');
+    const token = req.header('jwt');
     console.log(JSON.stringify(req.headers));
     if(!token) return res.status('401').send('acceso denegado');
     try {

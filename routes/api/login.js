@@ -21,8 +21,7 @@ router.post('/', async (req,res)=>{
   const token = jwt.sign({_id:user._id},process.env.token)
 
   res
-  .header('Access-Control-Expose-Headers', 'authtoken')
-  .header('authtoken', token)
+  .cookie('jwt',token, { httpOnly: true, secure: true, maxAge: 60*60*60*24 })
   .json(allData)
 
 })
