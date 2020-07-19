@@ -8,27 +8,24 @@ require('dotenv').config();
 const User = require('../../models/User');
 const News = require('../../models/News');
 
-router.post('/',(req,res)=>{
+router.post('/', async (req,res)=>{
 
-  const login = async () => {  
+  console.log(req.body)
 
-    let user = await User.findOne({correo:req.body.user, contraseña:req.body.password})
+  let user = await User.findOne({correo:req.body.user, contraseña:req.body.password})
     
-    let news = await News.findById(process.env.news)
+  let news = await News.findById(process.env.news)
 
-    let awaitPromises = Promise.all([user,news])
+  let awaitPromises = Promise.all([user,news])
     
-    let allData = await awaitPromises
+  let allData = await awaitPromises
 
-    const token = jwt.sign({_id:user._id},process.env.token)
+  const token = jwt.sign({_id:user._id},process.env.token)
 
-    res
-    .header('Access-Control-Expose-Headers', 'authtoken')
-    .header('authtoken', token)
-    .json(allData)
-    }
-
-    login()
+  res
+  .header('Access-Control-Expose-Headers', 'authtoken')
+  .header('authtoken', token)
+  .json(allData)
 
 })
 
