@@ -28,6 +28,7 @@ mongoose
 const login = require('./routes/api/login');
 const email = require('./routes/api/email');
 const news = require('./routes/api/news');
+const admin = require('./routes/api/admin');
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
@@ -39,6 +40,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use('/ingreso', login);
 app.use('/contacto', email);
+app.use('/admin', admin);
 app.use('/noticias', news);
 
 //---------------------------------------- server --------------------------------------------------

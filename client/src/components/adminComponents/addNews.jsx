@@ -11,7 +11,7 @@ const payload = {
     audience:audience,
     function:'addNews'
 }
-axios.post('https://glacial-refuge-74459.herokuapp.com/ingreso', payload)
+axios.post('https://glacial-refuge-74459.herokuapp.com/admin', payload)
 .then(res=>{
     setNews(res.data)
 })

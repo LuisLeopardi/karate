@@ -18,7 +18,7 @@ let editPayload = {
     value: inputValue,
     function: 'editNews'
 }
-axios.post('https://glacial-refuge-74459.herokuapp.com/ingreso', editPayload)
+axios.post('https://glacial-refuge-74459.herokuapp.com/admin', editPayload)
 .then(res=>{
     setNews(res.data)
 })
