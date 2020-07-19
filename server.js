@@ -4,14 +4,15 @@ app.use(express.json());
 const cors = require('cors')
 const path = require('path')
 app.use(cors());
+require('dotenv').config();
 
 //---------------------------------------- db --------------------------------------------------
 
 const mongoose = require('mongoose');
-const db = require('./config/keys').mongoURI;
 
 mongoose
-.connect(db,{
+.connect(
+    process.env.mongoURI,{
     useNewUrlParser: true,
     useUnifiedTopology: true 
 })

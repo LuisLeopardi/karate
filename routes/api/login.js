@@ -1,27 +1,27 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const dotenv = require('dotenv');
+require('dotenv').config();
 const app = express();
 const router = express.Router();
-
-const tokenSecret = require('../../config/keys.js').token;
+require('dotenv').config();
 const User = require('../../models/User');
-const News = require('../../models/News')
+const News = require('../../models/News');
+const verify = require('../../verifyToken')
 
 router.post('/',(req,res)=>{
 
-    const login = async () => {  
+  const login = async () => {  
 
     let user = await User.findOne({correo:req.body.user, contraseña:req.body.password})
     
-    let news = await News.findById('5e98929e04f2731f848eb713')
+    let news = await News.findById(process.env.news)
 
     let awaitPromises = Promise.all([user,news])
     
     let allData = await awaitPromises
 
-    const token = jwt.sign({_id:user._id},tokenSecret)
+    const token = jwt.sign({_id:user._id},process.env.token)
 
     res
     .header('Access-Control-Expose-Headers', 'authtoken')
@@ -30,6 +30,10 @@ router.post('/',(req,res)=>{
     }
 
     login()
+
+})
+
+router.post('/', verify, (req,res)=>{
 
     let year = `año_${new Date().getFullYear()}`
 
