@@ -33,7 +33,7 @@ router.post('/',(req,res)=>{
 
 })
 
-router.post('/', verify, (req,res)=>{
+router.post('/', (req,res)=>{
 
     let year = `año_${new Date().getFullYear()}`
 
