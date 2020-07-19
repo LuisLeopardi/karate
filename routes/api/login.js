@@ -13,6 +13,8 @@ router.post('/', async (req,res)=>{
   console.log(req.body)
 
   let user = await User.findOne({correo:req.body.user, contraseña:req.body.password})
+
+  console.log(user)
     
   let news = await News.findById(process.env.news)
 
